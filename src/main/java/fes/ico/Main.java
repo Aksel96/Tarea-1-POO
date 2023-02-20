@@ -46,18 +46,19 @@ public class Main {
                 System.out.println("+-----------------------+");
             }
     }else {
-            System.out.println("\nCARACTERES NO VALIDOS, POR FAVOR INTRODUCE OTROS (!No se admiten Numeros¡\n");
+            System.out.println("\nCARACTERES NO VALIDOS, POR FAVOR INTRODUCE OTROS \n\t(--> ¡No se admiten numeros! <--)\n");
         }
     }
     //Funcion para verificar si hay un numero en la cadena
     public static boolean verificaNumero(String[] entrada){
 
         for (String elemento:entrada){
+            //Usamos un control de excepciones para ver si se puede castear de string a entero
             try {
                 int compruebaNumero = Integer.parseInt(elemento);
                     return true;
 
-            }catch (NumberFormatException e){//Si no puede continuea con el nucle
+            }catch (NumberFormatException e){//Si no se puede hacer casting, continua con el bucle
             }
         }
         return false;
