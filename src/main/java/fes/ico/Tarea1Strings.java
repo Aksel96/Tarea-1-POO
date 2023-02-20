@@ -12,9 +12,7 @@
 
 */
 package fes.ico;
-
 import java.util.Scanner;
-
 public class Tarea1Strings {
     public static void main(String[] args){
         //Usamos scanner para pedir por teclado la cadena
@@ -56,13 +54,11 @@ public class Tarea1Strings {
     }
     //Funcion para verificar si hay un numero en la cadena
     public static boolean verificaNumero(String[] entrada){
-
         for (String elemento:entrada){
             //Usamos un control de excepciones para ver si se puede castear de string a entero
             try {
                 int compruebaNumero = Integer.parseInt(elemento);
                     return true;
-
             }catch (NumberFormatException e){//Si no se puede hacer casting, continua con el bucle
             }
         }
