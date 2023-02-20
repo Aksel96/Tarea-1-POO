@@ -8,27 +8,26 @@
 #    AKSEL VILLELA ANDRADE     #
 ################################
 
-### Programa que pide por teclado un numbre, profesion y pais, y lo regresa ordenado. ###
+### Programa que pide por teclado un nombre, profesion, pais y lo regresa ordenado. ###
 
 */
 package fes.ico;
 
 import java.util.Scanner;
 
-
 public class Main {
     public static void main(String[] args){
         //Usamos scanner para pedir por teclado la cadena
         Scanner teclado = new Scanner(System.in); // creamos la instancia teclado
         System.out.print("Escribe tu Nombre, Profesion y Pais de origen: "); //Pedimos la cadena
-        //Primero hacemos un split de toda la cadena para hacer verificacion de si tiene un numero
+        //Creamos un string con la cadena sin modificaciones para trabajar en ella
         String entrada = teclado.nextLine().trim();
-        //Arreglo de la cadena spliteada elemento por elemento para comprobar si hay un numero
+        //Creamos un Arreglo de la cadena y le hacemos rebanado elemento por elemento para comprobar si hay un numero
         String[] comprobacionEntrada = entrada.split("");
         //Llamamos a la funcion de comprobacion, para ver si hay un numero en la cadena
         boolean resultadoComprobacion = verificaNumero(comprobacionEntrada);
-        //Ciclo for para imprimir la cadena ene l orden pedido
-        if (!resultadoComprobacion){
+        //Comprobamos el resultado
+        if (!resultadoComprobacion){ //Si no hay numeros entonces...
             //Creamos una cadena y la splitemos con los datos validos
             String[] datosUsuario = entrada.trim().split(" ");
             //Comprobamos que la longitud de la cadena
@@ -51,7 +50,8 @@ public class Main {
                     System.out.println("+-----------------------+");
                 }}
         }else {
-                System.out.println("\nCARACTERES NO VALIDOS, POR FAVOR INTRODUCE OTROS \n\t(--> ¡No se admiten numeros! <--)\n");
+            //Si hay numeros en la cadena mostramos error
+            System.out.println("\nCARACTERES NO VALIDOS, POR FAVOR INTRODUCE OTROS \n\t(--> ¡No se admiten numeros! <--)\n");
             }
     }
     //Funcion para verificar si hay un numero en la cadena
