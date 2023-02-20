@@ -23,7 +23,7 @@ public class Main {
         System.out.print("Escribe tu Nombre, Profesion y Pais de origen: "); //Pedimos la cadena
         //Primero hacemos un split de toda la cadena para hacer verificacion de si tiene un numero
         String entrada = teclado.nextLine().trim();
-        //Areglo de la cadena spliteada elemento por elemento para comprobar si hay un numero
+        //Arreglo de la cadena spliteada elemento por elemento para comprobar si hay un numero
         String[] comprobacionEntrada = entrada.split("");
         //Llamamos a la funcion de comprobacion, para ver si hay un numero en la cadena
         boolean resultadoComprobacion = verificaNumero(comprobacionEntrada);
@@ -31,23 +31,28 @@ public class Main {
         if (!resultadoComprobacion){
             //Creamos una cadena y la splitemos con los datos validos
             String[] datosUsuario = entrada.trim().split(" ");
-            //Iteramos la cadena para imprimir la informacion
-            for (int i = 0; i < 3; i++) {
-                System.out.println("+-----------------------+");
-                if (i == 0) {
-                    System.out.println("    Nombre: " + datosUsuario[i].toUpperCase());
-                }
-                if (i == 1){
-                    System.out.println("    Profesion: " + datosUsuario[i].toUpperCase());
-                }
-                if (i == 2){
-                    System.out.println("    Pais: " + datosUsuario[i].toUpperCase());
-                }
-                System.out.println("+-----------------------+");
+            //Comprobamos que la longitud de la cadena
+            if (datosUsuario.length < 1 || datosUsuario.length > 3){
+                System.out.println("\n ---> ERROR, NUMERO DE PALABRAS INCORRECTAS <-- \n \t \t (Deben ser tres palabras) \n \n");
+            }else{
+                //De ser 3 el largo de la cadena continuamos
+                //Iteramos la cadena para imprimir la informacion
+                for (int i = 0; i < 3; i++) {
+                    System.out.println("+-----------------------+");
+                    if (i == 0) {
+                        System.out.println("    Nombre: " + datosUsuario[i].toUpperCase());
+                    }
+                    if (i == 1){
+                        System.out.println("    Profesion: " + datosUsuario[i].toUpperCase());
+                    }
+                    if (i == 2){
+                        System.out.println("    Pais: " + datosUsuario[i].toUpperCase());
+                    }
+                    System.out.println("+-----------------------+");
+                }}
+        }else {
+                System.out.println("\nCARACTERES NO VALIDOS, POR FAVOR INTRODUCE OTROS \n\t(--> ¡No se admiten numeros! <--)\n");
             }
-    }else {
-            System.out.println("\nCARACTERES NO VALIDOS, POR FAVOR INTRODUCE OTROS \n\t(--> ¡No se admiten numeros! <--)\n");
-        }
     }
     //Funcion para verificar si hay un numero en la cadena
     public static boolean verificaNumero(String[] entrada){
