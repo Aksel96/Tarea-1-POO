@@ -15,7 +15,7 @@ package fes.ico;
 
 import java.util.Scanner;
 
-public class Main {
+public class Tarea1Strings {
     public static void main(String[] args){
         //Usamos scanner para pedir por teclado la cadena
         Scanner teclado = new Scanner(System.in); // creamos la instancia teclado
