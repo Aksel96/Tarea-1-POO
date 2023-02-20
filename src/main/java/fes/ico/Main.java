@@ -1,14 +1,14 @@
 /*
-################################
-#            UNAM              #
-#        FES ARAGON            #
-#            ICO               #
-#            POO               #
-#          TAREA 1             #
-#    AKSEL VILLELA ANDRADE     #
-################################
+                                ################################
+                                #            UNAM              #
+                                #        FES ARAGON            #
+                                #            ICO               #
+                                #            POO               #
+                                #          TAREA 1             #
+                                #    AKSEL VILLELA ANDRADE     #
+                                ################################
 
-### Programa que pide por teclado un nombre, profesion, pais y lo regresa ordenado. ###
+    ### Programa que pide por teclado un nombre, profesion, pais y lo regresa ordenado. ###
 
 */
 package fes.ico;
@@ -32,12 +32,12 @@ public class Main {
             String[] datosUsuario = entrada.trim().split(" ");
             //Comprobamos que la longitud de la cadena
             if (datosUsuario.length < 1 || datosUsuario.length > 3){
-                System.out.println("\n ---> ERROR, NUMERO DE PALABRAS INCORRECTAS <-- \n \t \t (Deben ser tres palabras) \n \n");
+                System.out.println("\n ---> ERROR, Numero de palabras o espaciado incorrecto <--\n \t (Recuerda usar solo un espacio entre cada palabra)\n \n");
             }else{
                 //De ser 3 el largo de la cadena continuamos
                 //Iteramos la cadena para imprimir la informacion
                 for (int i = 0; i < 3; i++) {
-                    System.out.println("+-----------------------+");
+                    if(i == 0) System.out.println("+-----------------------+");
                     if (i == 0) {
                         System.out.println("    Nombre: " + datosUsuario[i].toUpperCase());
                     }
@@ -47,7 +47,7 @@ public class Main {
                     if (i == 2){
                         System.out.println("    Pais: " + datosUsuario[i].toUpperCase());
                     }
-                    System.out.println("+-----------------------+");
+                    if(i == 2) System.out.println("+-----------------------+");
                 }}
         }else {
             //Si hay numeros en la cadena mostramos error
